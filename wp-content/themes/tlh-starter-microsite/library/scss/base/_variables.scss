@@ -1,0 +1,39 @@
+/// Browser Context
+/// This is needed for the px to em's mixin
+$browser-context: 16; // Default
+
+/// @group sizes
+/// Responsive Breakpoint Variables
+$bp-sm: 481px;
+$bp-med: 768px;
+$bp-lg: 1040px;
+/// Content Wrap
+$wrap-sm: 700px;
+$wrap-md: 940px;
+$wrap-lg: 1400px;
+
+////
+/// @group colors
+////
+
+/// Base
+$primary-color: #990000;
+$accent-color-1: #F0B310;
+$accent-color-2: #2D7ABF;
+$gray-light: #DFDFDF;
+$gray-medium: #818B91;
+$gray-dark: #505050;
+$off-black: #36424A;
+$beige: #ECE6DA;
+
+/// Computed Colors
+$primary-color-dark: darken($primary-color, 5%);
+$accent-color-1-dark: #C08F0C;
+$accent-color-2-dark: darken($accent-color-2, 10%);
+$gray-medium-transparent: transparentize($gray-medium, 0.8);
+
+$text-color:        #666;
+/// Link Color
+$link-color:        crimson;
+///Link Hover
+$link-hover:        darken($link-color, 15%);

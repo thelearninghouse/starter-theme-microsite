@@ -1,0 +1,50 @@
+/******************************************************************
+Button Styles
+******************************************************************/
+
+/// BASE BUTTON
+/// @example
+///     @include buton($color);
+/// @param {variable} $btn-color [$link-color] - Background Button Color
+
+@mixin button($btn-color: $link-color) {
+  display: inline-block;
+  position: relative;
+  font-family: $sans-serif;
+  text-decoration: none;
+  color: $off-black !important;
+  font-size: 1em;
+  line-height: 34px;
+  font-weight: normal;
+  padding: .5em 1em;
+  border-radius: 2px;
+  border: 0;
+  cursor: pointer;
+  transition: background-color 0.14s ease-in-out;
+  background: $accent-color-1;
+
+  // hovering on the btn
+  &:hover, &:focus {
+    color: white;
+    text-decoration: none;
+    outline: none;
+    background: $accent-color-1-dark;
+  } // end hover
+
+  // clicking on the button
+  &:active {
+    top: 1px; // adds a tiny hop to the click
+  } // end active
+
+} // end .button
+
+// Regular Button
+.button {
+  @include button($accent-color-1);
+}
+
+// Small Button
+.button_sm {
+	font-size: .9em;
+	padding: .3em .8em;
+}

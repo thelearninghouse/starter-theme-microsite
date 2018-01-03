@@ -1,0 +1,47 @@
+/********************
+LAYOUT & GRID STYLES
+*********************/
+
+.wrap-sm,
+.wrap-md,
+.wrap-lg {
+	width: 100%;
+	margin: 0 auto;
+	padding-left: rem(20);
+	padding-right: rem(20);
+}
+
+.wrap-sm {
+	max-width: $wrap-sm;
+}
+
+.wrap-md {
+	max-width: $wrap-md;
+}
+
+.wrap-lg {
+	max-width: $wrap-lg;
+}
+
+@include mobilefirst($bp-med) {
+	.row {
+		display: flex;
+	}
+
+	.column {
+		width: 100%;
+		flex: 1;
+	}
+
+	.column:not(:first-of-type) {
+		margin-left: rem(40);
+	}
+}
+
+// Make sure footer is anchored to bottom of window on pages with short content.
+#container {
+	min-height: 100vh;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-between;
+}

@@ -1,0 +1,17 @@
+/*********************
+LINK STYLES
+*********************/
+
+a, a:visited {
+	color: $primary-color;
+
+	/* on hover */
+	&:hover, &:focus {
+		color: $primary-color;
+	}
+
+	/* mobile tap color */
+	&:link {
+		-webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
+	}
+}

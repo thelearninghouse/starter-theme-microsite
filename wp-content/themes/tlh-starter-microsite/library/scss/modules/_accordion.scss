@@ -1,0 +1,78 @@
+/*********************
+ACCORDION STYLES
+*********************/
+
+.accordion > dt:not(:first-of-type) {
+  margin-top: 10px;
+}
+
+.accordion-trigger {
+    background-color: $primary-color;
+    color: white;
+    border: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    margin: 0;
+    padding: 1em 1.5em;
+    position: relative;
+    text-align: left;
+    width: 100%;
+}
+
+.accordion-trigger:focus,
+.accordion-trigger:hover {
+    background-color: $primary-color-dark;
+}
+
+.accordion-title {
+  display: block; /* For Edge bug https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/8295099/ */
+  pointer-events: none;
+}
+
+.accordion-icon {
+  display: block;
+  flex: 0 0 rem(22);
+  width: rem(22);
+  height: rem(22);
+  margin-left: rem(10);
+  background-image: url('../images/icons/plus.svg');
+}
+
+.accordion-trigger[aria-expanded="true"] .accordion-icon {
+  background-image: url('../images/icons/minus.svg');
+}
+
+// .accordion-icon {
+//     border: solid hsl(0, 0%, 62%);
+//     border-width: 0 2px 2px 0;
+//     height: .5rem;
+//     pointer-events: none;
+//     position: absolute;
+//     right: 1.5em;
+//     top: 50%;
+//     transform: translateY(-60%) rotate(45deg);
+//     width: .5rem;
+// }
+//
+// .accordion-trigger:focus .accordion-icon,
+// .accordion-trigger:hover .accordion-icon {
+//     border-color: hsl(0, 0%, 13%);
+// }
+//
+// .accordion-trigger[aria-expanded="true"] .accordion-icon {
+//     transform: translateY(-50%) rotate(-135deg);
+// }
+
+.accordion-panel {
+  display: block;
+  margin: 0;
+  padding: rem(20);
+  background-color: #CBCBCB;
+}
+
+/* For Edge bug https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/4806035/ */
+.accordion-panel[hidden] {
+  display: none;
+}

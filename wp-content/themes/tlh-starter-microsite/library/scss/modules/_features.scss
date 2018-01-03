@@ -1,0 +1,84 @@
+/* no grid support? */
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-gap: 0 rem(60);
+  grid-template-columns: repeat(1, 1fr);
+
+  @include mobilefirst($bp-med) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mobilefirst($bp-lg) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.features > li {
+  /* needed for the flex layout */
+  margin-left: rem(5);
+  margin-right: rem(5);
+  flex: 1 1 rem(300);
+  padding: rem(20) 0;
+
+  &:not(:first-of-type) {
+    border-top: rem(1) rgba(255, 255, 255, 0.3) solid;
+
+    @include mobilefirst($bp-med) {
+      border-top: none;
+    }
+  }
+
+  @include mobilefirst($bp-lg) {
+    padding: 0;
+  };
+}
+
+/* We need to set the margin used on flex items to 0 as we have gaps in grid.  */
+@supports (display: grid) {
+  .features > li {
+    margin: 0;
+  }
+}
+
+.features > li {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  text-align: center;
+
+  p {
+    margin: 0;
+  }
+
+  img {
+    margin-bottom: rem(10);
+  }
+
+  @include mobilefirst($bp-med) {
+    align-items: flex-start;
+    flex-flow: row nowrap;
+    text-align: left;
+
+    img {
+      width: rem(50);
+      height: rem(50);
+      margin-bottom: 0;
+      margin-right: rem(20);
+    }
+
+    .title {
+      font-size: em(21);
+      font-weight: 700;
+      margin: 0 0 rem(10);
+    }
+  }
+}

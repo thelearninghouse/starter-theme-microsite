@@ -1,0 +1,138 @@
+/*************************
+HOMEPAGE SPECIFIC STYLES
+*************************/
+
+.home .page-title {
+  background-color: $gray-dark;
+  color: white;
+  padding-top: rem(90);
+  padding-bottom: rem(180);
+  border-bottom: $accent-color-2 rem(20) solid;
+}
+
+.home .page-title h1,
+.home .page-title span, {
+	text-align: center;
+	margin-left: auto;
+}
+
+.home .page-title hr {
+  margin-left: auto;
+}
+
+.cards {
+  text-align: center;
+  margin-top: rem(-100);
+}
+
+.cards .card:last-of-type {
+  margin-top: rem(10)
+}
+
+@include mobilefirst($bp-med) {
+  .cards {
+    display: flex;
+    justify-content: center;
+  }
+
+  .cards .card:first-of-type {
+    margin-right: rem(20);
+  }
+
+  .cards .card:last-of-type {
+    margin-top: 0;
+    margin-left: rem(20);
+  }
+}
+
+.welcome,
+.about {
+  padding-top: rem(40);
+  padding-bottom: rem(55);
+
+  @include mobilefirst($bp-med) {
+    padding-top: rem(80);
+    padding-bottom: rem(110);
+  }
+}
+
+.welcome {
+  position: relative;
+}
+
+.welcome h2 {
+  color: $primary-color;
+  margin-top: 0;
+  font-weight: 300;
+  text-align: center;
+}
+
+.about {
+  background-color: $gray-dark;
+  background-image: url('../images/alvernia-campus-2.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+  clip-path: polygon(0 0, calc(50% - 15px) 0, 50% 15px, calc(50% + 15px) 0, 100% 0, 100% 100%, 0 100%);
+  margin-top: rem(-15);
+  color: white;
+
+  @include mobilefirst($bp-med) {
+    clip-path: polygon(0 0, calc(50% - 30px) 0, 50% 30px, calc(50% + 30px) 0, 100% 0, 100% 100%, 0 100%);
+    margin-top: rem(-30);
+  }
+}
+
+.about h2 {
+  margin-top: 0;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.core-values {
+  background-color: $beige;
+  color: $gray-dark;
+  box-shadow: 0 2px 14px 0 rgba(0,0,0,0.20);
+  padding: rem(20);
+
+  @include mobilefirst($bp-med) {
+    padding: rem(40);
+  }
+}
+
+.core-values h3 {
+  color: $primary-color;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 0;
+}
+
+@include mobilefirst($bp-lg) {
+  .core-values h3 {
+    display: flex;
+    align-items: center;
+  }
+
+  .core-values h3::before,
+  .core-values h3::after {
+    content: " ";
+    display: block;
+    flex: 1;
+    border-top: rgba(0, 0, 0, 0.1) rem(2) solid;
+    width: 100%;
+    height: rem(2);
+  }
+
+  .core-values h3::before {
+    margin-right: rem(5);
+  }
+
+  .core-values h3::after {
+    margin-left: rem(5);
+  }
+
+  .core-values ul {
+    font-size: em(20);
+    columns: 2;
+  }
+}
