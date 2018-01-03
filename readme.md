@@ -1,34 +1,25 @@
-# Learning House Wordpress Starter Theme
+# Learning House Wordpress Micro-Site Starter Theme
 
-## Basic Usage
+This is a base theme to speed up development of Modality-Agnostic Micro-sites (MAGs). In addition to the usual build tools and basic theme structure included with the base TLH starter theme, this theme includes many features that all MAG sites share, like specific templates, basic layout CSS, and common components. It is designed to be duplicated and modified as needed to build a MAG site branded for a particular school. Necessary plugins are bundled, as well as a configuration file for [Advanced Custom Fields](https://www.advancedcustomfields.com/) to set up standard fields to help organize information for the school and programs offered.
 
-### Install Dependencies
+## Features
 
-Install by navigating to the theme's `library` folder and running `npm install` followed by `bower install`
+- Gulp task that compiles Sass, minifies JS, and live-updates the page with BrowserSync
+- Pre-defined templates for standard pages
+- Content editor powered by Advanced Custom Fields
+- General purpose accessible components like accordions and icons
 
-### Critical CSS
+## Getting Started
 
-This theme utilizes inline styling in the head of the document for faster load times. If it seems like your changes are not working there is a chance that these inline styles are overwriting your changes.
-
-### Watch Files
-
-To start watching files use `gulp` from the `library` folder. This will run browsersync and then watch. You can now open any browser and when you make changes the browser(s) will inject the proper files automatically.
-
-### Grid Usage
-
-This theme uses Susy Grid. Documentation can be found [here](http://susydocs.oddbird.net/en/latest/)
-
-### Custom Fields
-
-This theme relies on [Advanced Custom Fields](https://www.advancedcustomfields.com/) to help handle much of the content and settings on the site. To set up all the fields on a new install, navigate to the Tools section in the WP Admin and import the `acf-export-latest.json` from the theme's `library` folder.
-
-## Menus
-
-There are three menus setup for this theme by default:
-
-1. MAIN MENU - Main Navigation
-2. SECONDARY MENU - Secondary navigation at the top of header with contact information
-3. FOOTER MENU - Footer Navigation
+1. Create a new repository for the new microsite theme and clone this theme into it.
+2. Set up a new local development environment and clone the new repository into it.
+3. Install dependencies by navigating to the theme's `library` folder and running `npm install` followed by `bower install`.
+4. Edit `gulpfile.js` and change the proxy in the BrowserSync section to match the url you set up for your local development environment.
+5. Run `gulp` from the `library` folder to start BrowserSync and watch for changes on source files.
+6. Log in to the WP Admin.
+7. Under _Appearance > Themes_, make sure that the correct theme is selected if you renamed the theme folder.
+8. Under _Plugins_, make sure that the included plugins are activated.
+9. Under _Custom Fields > Tools_, import `acf-export-latest.json` located in the theme's `library` folder to set up the base fields.
 
 ## Theme File Structure
 
@@ -38,12 +29,7 @@ starter-theme/
 |    ├── bower_components  // Where all our bower components are housed
 |    ├── css  //
 |    |   ├── build // Production Files
-|    |   |   ├── minified  // Contains all minified versions of stylesheets
-|    |   |   ├── prefixed  // Contains style sheets that have been through Autoprefixer
-|    |   |   ├── home-critical.css // Critical CSS for homepage
 |    |   |   ├── ie.css  // IE Stylesheet
-|    |   |   ├── interior-critical.css  // Critical CSS for interior pages
-|    |   |   ├── lp-critical.css  // Critical CSS for Landing Pages
 |    |   |   ├── lp-style.css  // Main stylesheet for Landing Pages
 |    |   |   └── style.css  // Main Stylesheet
 |    ├── images  // Images relative to the theme
@@ -53,7 +39,7 @@ starter-theme/
 |    |   |   └── production.min.js
 |    |   ├── libs // For javascript libraries i.e. Modernizr
 |    |   └──  scripts.js // Main javascript file
-|    ├── plugins  // Zip files of plugins that are critical to the theme
+|    ├── plugins // plugin folders that are critical to the theme
 |    ├── scss
 |    |    ├── base
 |    |    |    ├── _base.scss // Base stylesheet for mobile and up
@@ -63,13 +49,14 @@ starter-theme/
 |    |    |    ├── _typography.scss // Typography styling
 |    |    |    └── _variables.scss // Variables (breakpoints, colors, etc.)
 |    |    ├── modules
-|    |    |    ├── _buttons.scss // Contains styling that applies to buttons
-|    |    |    ├── _forms.scss // Form styling
-|    |    |    ├── _progress.scss // Styling for the progress bar on blog posts
 |    |    |    ├── _accordion.scss // Styling for accordions
+|    |    |    ├── _buttons.scss // Contains styling that applies to buttons
+|    |    |    ├── _card.scss // Styling for cards
 |    |    |    ├── _clearfix.scss // Clearfix class decleration
+|    |    |    ├── _forms.scss // Form styling
 |    |    |    ├── _links.scss // Link Styling
 |    |    |    ├── _media.scss // Styling for images, videos, etc.
+|    |    |    ├── _progress.scss // Styling for the progress bar on blog posts
 |    |    |    ├── _sidebar.scss // Sidebar Styling
 |    |    |    ├── _social.scss // Social Sharing Styling
 |    |    |    └── _tables.scss // Table styling
@@ -92,7 +79,7 @@ starter-theme/
 |    ├── bower.json  // Bower setup and dependencies
 |    ├── custom-post-types.php  // Where we register our custom post types for Online Degrees and Landing Pages
 |    ├── Gruntfile.js  // Grunt setup file
-|    ├── package.json  // Grunt details and dependencies
+|    ├── package.json  // npm details and dependencies
 |    └── template-tags.php  // custom php functions to generate html for templates
 ├── 404.php  // Template for 404 page
 ├── archive-degrees.php  // Archive template for Online Degrees
@@ -125,6 +112,6 @@ Make sure `style-guide/index.php` is pointing to the main css stylesheet.
 
 Update patterns to include/exclude patterns found on the new site.
 
-## Sassdoc
+### Sassdoc
 
 This documentation is for the front-end team for easy access to variable, mixins, functions, etc. [View SassDoc](http://tlhstarter.wpengine.com/sassdoc)
