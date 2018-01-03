@@ -53,7 +53,9 @@ starter-theme/
 |    |    |    ├── _buttons.scss // Contains styling that applies to buttons
 |    |    |    ├── _card.scss // Styling for cards
 |    |    |    ├── _clearfix.scss // Clearfix class decleration
+|    |    |    ├── _features.scss // Styling for the common list of icons with paragraphs
 |    |    |    ├── _forms.scss // Form styling
+|    |    |    ├── _icon.scss // Styling for inline svg icons
 |    |    |    ├── _links.scss // Link Styling
 |    |    |    ├── _media.scss // Styling for images, videos, etc.
 |    |    |    ├── _progress.scss // Styling for the progress bar on blog posts
