@@ -390,10 +390,6 @@ body {
 .fonts-loaded body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
-.border {
-  border: 2px solid crimson;
-  padding: .5em 1em; }
-
 /*********************
 IMPORTING BASIC ELEMENT STYLING
 *********************/
@@ -445,7 +441,7 @@ h3, .h3 {
       line-height: 1.25; } }
 
 h4, .h4 {
-  color: crimson;
+  color: #990000;
   font-size: 1.125em;
   line-height: 1.11111111; }
   @media screen and (min-width: 768px) {
@@ -453,14 +449,14 @@ h4, .h4 {
       line-height: 1.222222222; } }
 
 h5, .h5 {
+  color: #990000;
   font-size: 0.84375em;
   line-height: 1.25;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  color: crimson; }
+  letter-spacing: 2px; }
 
 h6, .h6 {
-  color: crimson; }
+  color: #990000; }
 
 /*********************
 LINK STYLES
@@ -833,7 +829,7 @@ textarea,
   line-height: 1em;
   margin-bottom: 1.25rem;
   font-size: 1.25rem;
-  color: #666;
+  color: #505050;
   border: rgba(0, 0, 0, 0.08) 0.125rem solid;
   border-spacing: inherit;
   border-radius: 0.125rem;

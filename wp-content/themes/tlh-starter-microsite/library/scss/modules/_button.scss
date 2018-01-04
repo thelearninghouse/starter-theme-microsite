@@ -7,7 +7,7 @@ Button Styles
 ///     @include buton($color);
 /// @param {variable} $btn-color [$link-color] - Background Button Color
 
-@mixin button($btn-color: $link-color) {
+@mixin button($btn-color: $primary-color) {
   display: inline-block;
   position: relative;
   font-family: $sans-serif;

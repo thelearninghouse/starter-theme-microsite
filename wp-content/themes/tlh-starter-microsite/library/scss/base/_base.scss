@@ -26,9 +26,3 @@ body {
 .fonts-loaded body {
     font-family: $sans-serif;
 }
-
-// Styled box with a border
-.border {
-    border: 2px solid $link-color;
-    padding: .5em 1em;
-}
