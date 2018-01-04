@@ -40,30 +40,9 @@ ACCORDION STYLES
   background-image: url('../images/icons/plus.svg');
 }
 
-.accordion-trigger[aria-expanded="true"] .m-accordion-icon {
+.accordion-trigger[aria-expanded="true"] .accordion-icon {
   background-image: url('../images/icons/minus.svg');
 }
-
-// .accordion-icon {
-//     border: solid hsl(0, 0%, 62%);
-//     border-width: 0 2px 2px 0;
-//     height: .5rem;
-//     pointer-events: none;
-//     position: absolute;
-//     right: 1.5em;
-//     top: 50%;
-//     transform: translateY(-60%) rotate(45deg);
-//     width: .5rem;
-// }
-//
-// .accordion-trigger:focus .accordion-icon,
-// .accordion-trigger:hover .accordion-icon {
-//     border-color: hsl(0, 0%, 13%);
-// }
-//
-// .accordion-trigger[aria-expanded="true"] .accordion-icon {
-//     transform: translateY(-50%) rotate(-135deg);
-// }
 
 .accordion-panel {
   display: block;
