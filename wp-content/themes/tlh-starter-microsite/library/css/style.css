@@ -2,7 +2,7 @@
 Main Stylesheet
 ******************************************************************/
 /*********************
-IMPORTING BASE
+IMPORTING SETTINGS (most of this will stay the same on all projects)
 *********************/
 /*! normalize.css v4.0.0 | MIT License | github.com/necolas/normalize.css */
 /**
@@ -366,13 +366,42 @@ textarea {
 [type="search"]::-webkit-search-decoration {
   -webkit-appearance: none; }
 
-/******************************************************************
-Typography Styles
-******************************************************************/
+/*********************
+GENERAL STYLES
+*********************/
+html {
+  box-sizing: border-box;
+  font-size: 100%; }
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit; }
+
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 1.125em;
+  line-height: 1.5;
+  color: #505050;
+  background-color: #DFDFDF;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.fonts-loaded body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+.border {
+  border: 2px solid crimson;
+  padding: .5em 1em; }
+
+/*********************
+IMPORTING BASIC ELEMENT STYLING
+*********************/
 /******************************************************************
 H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-rendering: optimizelegibility;
   font-weight: 400; }
   h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a {
@@ -433,6 +462,32 @@ h5, .h5 {
 h6, .h6 {
   color: crimson; }
 
+/*********************
+LINK STYLES
+*********************/
+a, a:visited {
+  color: #990000;
+  /* on hover */
+  /* mobile tap color */ }
+  a:hover, a:focus, a:visited:hover, a:visited:focus {
+    color: #990000; }
+  a:link, a:visited:link {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3); }
+
+ul {
+  list-style: square outside url("../images/bullet.svg"); }
+
+@media screen and (min-width: 768px) {
+  ul.large {
+    font-size: 1.3125em; }
+    ul.large li {
+      margin-bottom: 0.625rem; } }
+
+@media screen and (min-width: 768px) {
+  ul.columns {
+    -webkit-columns: 2;
+            columns: 2; } }
+
 blockquote {
   font-size: 1em;
   line-height: 1.25;
@@ -467,47 +522,32 @@ figure, figcaption {
     border-width: 0 30px 30px 0;
     border-color: transparent gray transparent transparent; }
 
-ul {
-  list-style: square outside url("../images/bullet.svg"); }
+table {
+  width: 100%;
+  margin-bottom: 1.5em; }
+  table caption {
+    margin: 0 0 7px;
+    font-size: 0.75em;
+    color: gray;
+    text-transform: uppercase;
+    letter-spacing: 1px; }
 
-@media screen and (min-width: 768px) {
-  ul.large {
-    font-size: 1.3125em; }
-    ul.large li {
-      margin-bottom: 0.625rem; } }
+th,
+td {
+  padding: 10px 20px;
+  text-align: left; }
 
-@media screen and (min-width: 768px) {
-  ul.columns {
-    -webkit-columns: 2;
-            columns: 2; } }
+tr:nth-child(even) {
+  background: #eee; }
 
-/*********************
-GENERAL STYLES
-*********************/
-html {
-  box-sizing: border-box;
-  font-size: 100%; }
+tr:nth-child(even) {
+  background-color: lightgray; }
 
-*,
-*:before,
-*:after {
-  box-sizing: inherit; }
+td {
+  color: #666; }
 
-body {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-size: 1.125em;
-  line-height: 1.5;
-  color: #505050;
-  background-color: #DFDFDF;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
-
-.fonts-loaded body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
-
-.border {
-  border: 2px solid crimson;
-  padding: .5em 1em; }
+th {
+  background-color: lightgray; }
 
 /*********************
 IMPORTING MODULES
@@ -557,7 +597,7 @@ ACCORDION STYLES
   margin-left: 0.625rem;
   background-image: url("../images/icons/plus.svg"); }
 
-.accordion-trigger[aria-expanded="true"] .accordion-icon {
+.accordion-trigger[aria-expanded="true"] .m-accordion-icon {
   background-image: url("../images/icons/minus.svg"); }
 
 .accordion-panel {
@@ -569,6 +609,36 @@ ACCORDION STYLES
 /* For Edge bug https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/4806035/ */
 .accordion-panel[hidden] {
   display: none; }
+
+/******************************************************************
+Button Styles
+******************************************************************/
+.button {
+  display: inline-block;
+  position: relative;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  color: #36424A !important;
+  font-size: 1em;
+  line-height: 34px;
+  font-weight: normal;
+  padding: .5em 1em;
+  border-radius: 2px;
+  border: 0;
+  cursor: pointer;
+  transition: background-color 0.14s ease-in-out;
+  background: #F0B310; }
+  .button:hover, .button:focus {
+    color: white;
+    text-decoration: none;
+    outline: none;
+    background: #C08F0C; }
+  .button:active {
+    top: 1px; }
+
+.button--sm {
+  font-size: .9em;
+  padding: .3em .8em; }
 
 .card {
   background: #FFFFFF;
@@ -673,84 +743,69 @@ ACCORDION STYLES
         font-weight: 700;
         margin: 0 0 0.625rem; } }
 
-.icon {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  fill: currentColor; }
+.footer {
+  border-top: #818B91 1.25rem solid;
+  background-color: #36424A;
+  color: white;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem; }
+  @media screen and (min-width: 1040px) {
+    .footer {
+      padding-top: 2.5rem;
+      padding-bottom: 2.5rem; } }
 
-.icon.inline {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-item-align: center;
-      align-self: center;
-  position: relative;
-  height: 1em;
-  width: 1em; }
+@media screen and (min-width: 1040px) {
+  .footer .brand-line {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .footer .brand-line::before, .footer .brand-line::after {
+      content: " ";
+      display: block;
+      -webkit-box-flex: 1;
+          -ms-flex: 1;
+              flex: 1;
+      border-top: #F0B310 0.125rem solid;
+      width: 100%;
+      height: 0.125rem; }
+    .footer .brand-line > ul {
+      border-left: #F0B310 0.125rem solid;
+      border-right: #F0B310 0.125rem solid; } }
 
-.icon.inline > svg {
-  height: 1em;
-  width: 1em; }
+.footer a,
+.footer a:hover,
+.footer a:active {
+  color: #F0B310; }
 
-.icon.inline > svg {
-  bottom: -0.05em;
-  position: absolute; }
+.footer__copyright {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  text-align: center; }
+  @media screen and (min-width: 1040px) {
+    .footer__copyright {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      padding-left: 1.25rem;
+      padding-right: 1.25rem; }
+      .footer__copyright li:not(:last-of-type)::after {
+        content: "|";
+        margin-left: 0.625rem;
+        margin-right: 0.625rem; } }
 
-.icon.inline.lg,
-.icon.inline.lg > svg {
-  height: 2em;
-  width: 2em; }
-
-/******************************************************************
-Button Styles
-******************************************************************/
-.button {
-  display: inline-block;
-  position: relative;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-decoration: none;
-  color: #36424A !important;
-  font-size: 1em;
-  line-height: 34px;
-  font-weight: normal;
-  padding: .5em 1em;
-  border-radius: 2px;
-  border: 0;
-  cursor: pointer;
-  transition: background-color 0.14s ease-in-out;
-  background: #F0B310; }
-  .button:hover, .button:focus {
-    color: white;
-    text-decoration: none;
-    outline: none;
-    background: #C08F0C; }
-  .button:active {
-    top: 1px; }
-
-.button_sm {
-  font-size: .9em;
-  padding: .3em .8em; }
-
-/* Clearfix */
-.clearfix, .cf, .comment-respond {
-  zoom: 1; }
-
-.clearfix:before, .clearfix:after, .cf:before, .comment-respond:before, .cf:after, .comment-respond:after {
-  content: "";
-  display: table; }
-
-.clearfix:after, .cf:after, .comment-respond:after {
-  clear: both; }
+.footer__copyright .school-address span {
+  display: block;
+  width: 100%; }
+  @media screen and (min-width: 768px) {
+    .footer__copyright .school-address span {
+      display: inline; } }
 
 /******************************************************************
 Form Styles
@@ -906,87 +961,6 @@ legend,
   display: none; }
 
 /*********************
-LINK STYLES
-*********************/
-a, a:visited {
-  color: #990000;
-  /* on hover */
-  /* mobile tap color */ }
-  a:hover, a:focus, a:visited:hover, a:visited:focus {
-    color: #990000; }
-  a:link, a:visited:link {
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3); }
-
-/* Responsive Videos */
-.videoWrapper {
-  position: relative;
-  padding-bottom: 56.25%;
-  /* 16:9 */
-  height: 0; }
-  .videoWrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; }
-
-img,
-.size-auto,
-.size-full,
-.size-large,
-.size-medium,
-.size-thumbnail {
-  max-width: 100%;
-  height: auto; }
-
-/**** 768 AND UP ****/
-@media screen and (min-width: 481px) {
-  /* at this larger size, we can start to align images */
-  .alignleft, img.alignleft {
-    margin-right: 1.5em;
-    display: inline;
-    float: left; }
-  .alignright, img.alignright {
-    margin-left: 1.5em;
-    display: inline;
-    float: right; }
-  .aligncenter, img.aligncenter {
-    margin-right: auto;
-    margin-left: auto;
-    display: block;
-    clear: both; } }
-
-/*********************
-SIDEBARS & ASIDES
-*********************/
-.no-widgets {
-  background-color: white;
-  padding: 1.5em;
-  text-align: center;
-  border: 1px solid gray;
-  border-radius: 2px;
-  margin-bottom: 1.5em; }
-
-/**** 768 UP ****/
-@media screen and (min-width: 768px) {
-  .widgettitle {
-    border-bottom: 2px solid #444;
-    margin-bottom: 0.75em; }
-  .widget {
-    padding: 0 10px;
-    margin: 2.2em 0; }
-    .widget:first-of-type {
-      margin-top: 0; }
-    .widget li {
-      margin-bottom: 0.75em; }
-      .widget li ul {
-        margin-top: 0.75em;
-        padding-left: 1em; } }
-
-/*********************
-IMPORTING PARTIALS
-*********************/
-/*********************
 HEADER STYLES
 *********************/
 .header {
@@ -1053,73 +1027,44 @@ HEADER STYLES
         -ms-flex-align: center;
             align-items: center; } }
 
-.footer {
-  border-top: #818B91 1.25rem solid;
-  background-color: #36424A;
-  color: white;
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem; }
-  @media screen and (min-width: 1040px) {
-    .footer {
-      padding-top: 2.5rem;
-      padding-bottom: 2.5rem; } }
+.icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  fill: currentColor; }
 
-@media screen and (min-width: 1040px) {
-  .footer .brand-line {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center; }
-    .footer .brand-line::before, .footer .brand-line::after {
-      content: " ";
-      display: block;
-      -webkit-box-flex: 1;
-          -ms-flex: 1;
-              flex: 1;
-      border-top: #F0B310 0.125rem solid;
-      width: 100%;
-      height: 0.125rem; }
-    .footer .brand-line > ul {
-      border-left: #F0B310 0.125rem solid;
-      border-right: #F0B310 0.125rem solid; } }
+.icon.inline {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  position: relative;
+  height: 1em;
+  width: 1em; }
 
-.footer a,
-.footer a:hover,
-.footer a:active {
-  color: #F0B310; }
+.icon.inline > svg {
+  height: 1em;
+  width: 1em; }
 
-.footer__copyright {
-  list-style: none;
-  padding: 0;
-  margin: 0 auto;
-  text-align: center; }
-  @media screen and (min-width: 1040px) {
-    .footer__copyright {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-pack: center;
-          -ms-flex-pack: center;
-              justify-content: center;
-      padding-left: 1.25rem;
-      padding-right: 1.25rem; }
-      .footer__copyright li:not(:last-of-type)::after {
-        content: "|";
-        margin-left: 0.625rem;
-        margin-right: 0.625rem; } }
+.icon.inline > svg {
+  bottom: -0.05em;
+  position: absolute; }
 
-.footer__copyright .school-address span {
-  display: block;
-  width: 100%; }
-  @media screen and (min-width: 768px) {
-    .footer__copyright .school-address span {
-      display: inline; } }
+.icon.inline.lg,
+.icon.inline.lg > svg {
+  height: 2em;
+  width: 2em; }
 
-/*********************
-IMPORTING PAGES
-*********************/
 /********************
 LAYOUT & GRID STYLES
 *********************/
@@ -1165,6 +1110,122 @@ LAYOUT & GRID STYLES
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between; }
+
+/* Responsive Videos */
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  height: 0; }
+  .videoWrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+
+img,
+.size-auto,
+.size-full,
+.size-large,
+.size-medium,
+.size-thumbnail {
+  max-width: 100%;
+  height: auto; }
+
+/**** 768 AND UP ****/
+@media screen and (min-width: 481px) {
+  /* at this larger size, we can start to align images */
+  .alignleft, img.alignleft {
+    margin-right: 1.5em;
+    display: inline;
+    float: left; }
+  .alignright, img.alignright {
+    margin-left: 1.5em;
+    display: inline;
+    float: right; }
+  .aligncenter, img.aligncenter {
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    clear: both; } }
+
+.page-title {
+  background-color: #505050;
+  background-size: cover;
+  background-position: center center;
+  color: white;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem; }
+  @media screen and (min-width: 768px) {
+    .page-title {
+      padding-top: 8.75rem;
+      padding-bottom: 5rem; } }
+
+@media screen and (min-width: 1200px) {
+  .page-title {
+    background-image: url("../images/section-background.jpg"); } }
+
+@media screen and (min-width: 801px) and (max-width: 1200px) {
+  .page-title {
+    background-image: url("../images/section-background.jpg"); } }
+
+@media screen and (max-width: 800px) {
+  .page-title {
+    background-image: url("../images/section-background.jpg"); } }
+
+.page-title h1,
+.page-title span {
+  display: block;
+  max-width: 940px;
+  margin-right: auto; }
+
+.page-title h1 {
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 0; }
+
+.page-title span {
+  font-weight: 300; }
+
+.page-title hr {
+  width: 5rem;
+  margin: 0.625rem auto 0.625rem 0;
+  border: none;
+  border-top: #F0B310 0.25rem solid; }
+
+.u-clearfix, .u-cf, .u-comment-respond {
+  zoom: 1; }
+
+.u-clearfix:before, .u-clearfix:after, .u-cf:before, .u-comment-respond:before, .u-cf:after, .u-comment-respond:after {
+  content: "";
+  display: table; }
+
+.u-clearfix:after, .u-cf:after, .u-comment-respond:after {
+  clear: both; }
+
+/*********************
+IMPORTING PAGES
+*********************/
+/*************************
+PAGE SPECIFIC STYLES
+*************************/
+.single-header__title,
+.page-header__title,
+.post-header__title {
+  margin: 0; }
+
+.page .editor-content,
+.error404 .editor-content {
+  max-width: 43.75rem;
+  margin-right: auto;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem; }
+  @media screen and (min-width: 768px) {
+    .page .editor-content,
+    .error404 .editor-content {
+      padding-top: 2.5rem;
+      padding-bottom: 2.5rem; } }
 
 /*************************
 HOMEPAGE SPECIFIC STYLES
@@ -1287,58 +1348,6 @@ HOMEPAGE SPECIFIC STYLES
     -webkit-columns: 2;
             columns: 2; } }
 
-/*************************
-PAGE SPECIFIC STYLES
-*************************/
-.single-header__title,
-.page-header__title,
-.post-header__title {
-  margin: 0; }
-
-.page-title {
-  background-color: #505050;
-  background-size: cover;
-  background-position: center center;
-  color: white;
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem; }
-  @media screen and (min-width: 768px) {
-    .page-title {
-      padding-top: 8.75rem;
-      padding-bottom: 5rem; } }
-
-@media screen and (min-width: 1200px) {
-  .page-title {
-    background-image: url("../images/section-background.jpg"); } }
-
-@media screen and (min-width: 801px) and (max-width: 1200px) {
-  .page-title {
-    background-image: url("../images/section-background.jpg"); } }
-
-@media screen and (max-width: 800px) {
-  .page-title {
-    background-image: url("../images/section-background.jpg"); } }
-
-.page-title h1,
-.page-title span {
-  display: block;
-  max-width: 940px;
-  margin-right: auto; }
-
-.page-title h1 {
-  font-weight: 700;
-  margin-top: 0;
-  margin-bottom: 0; }
-
-.page-title span {
-  font-weight: 300; }
-
-.page-title hr {
-  width: 5rem;
-  margin: 0.625rem auto 0.625rem 0;
-  border: none;
-  border-top: #F0B310 0.25rem solid; }
-
 .bg-seal {
   background-image: url("../images/alvu-seal-black.svg");
   background-size: 32.125rem 32.125rem;
@@ -1364,18 +1373,6 @@ PAGE SPECIFIC STYLES
   .degrees .sidebar {
     margin-top: -13.75rem;
     width: 33.3%; } }
-
-.page .editor-content,
-.error404 .editor-content {
-  max-width: 43.75rem;
-  margin-right: auto;
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem; }
-  @media screen and (min-width: 768px) {
-    .page .editor-content,
-    .error404 .editor-content {
-      padding-top: 2.5rem;
-      padding-bottom: 2.5rem; } }
 
 .degrees {
   padding-top: 1.25rem;
@@ -1407,7 +1404,7 @@ PAGE SPECIFIC STYLES
         margin-bottom: 3.75rem; } }
 
 /*********************
-PRINT
+IMPORTING PRINT
 *********************/
 @media print {
   /******************************************************************

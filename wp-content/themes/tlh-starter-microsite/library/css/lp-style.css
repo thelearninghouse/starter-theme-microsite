@@ -515,10 +515,10 @@ IMPORTING MODULES
 /*********************
 ACCORDION STYLES
 *********************/
-.accordion > dt:not(:first-of-type) {
+.c-accordion > dt:not(:first-of-type) {
   margin-top: 10px; }
 
-.accordion-trigger {
+.c-accordion__trigger {
   background-color: #990000;
   color: white;
   border: 0;
@@ -538,16 +538,16 @@ ACCORDION STYLES
   text-align: left;
   width: 100%; }
 
-.accordion-trigger:focus,
-.accordion-trigger:hover {
+.c-accordion__trigger:focus,
+.c-accordion__trigger:hover {
   background-color: maroon; }
 
-.accordion-title {
+.c-accordion__title {
   display: block;
   /* For Edge bug https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/8295099/ */
   pointer-events: none; }
 
-.accordion-icon {
+.c-accordion__icon {
   display: block;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 1.375rem;
@@ -557,17 +557,17 @@ ACCORDION STYLES
   margin-left: 0.625rem;
   background-image: url("../images/icons/plus.svg"); }
 
-.accordion-trigger[aria-expanded="true"] .accordion-icon {
+.c-accordion__trigger[aria-expanded="true"] .c-accordion__icon {
   background-image: url("../images/icons/minus.svg"); }
 
-.accordion-panel {
+.c-accordion__panel {
   display: block;
   margin: 0;
   padding: 1.25rem;
   background-color: #CBCBCB; }
 
 /* For Edge bug https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/4806035/ */
-.accordion-panel[hidden] {
+.c-accordion__panel[hidden] {
   display: none; }
 
 .card {
@@ -676,7 +676,7 @@ ACCORDION STYLES
 /******************************************************************
 Button Styles
 ******************************************************************/
-.button {
+.m-button {
   display: inline-block;
   position: relative;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -691,15 +691,15 @@ Button Styles
   cursor: pointer;
   transition: background-color 0.14s ease-in-out;
   background: #F0B310; }
-  .button:hover, .button:focus {
+  .m-button:hover, .m-button:focus {
     color: white;
     text-decoration: none;
     outline: none;
     background: #C08F0C; }
-  .button:active {
+  .m-button:active {
     top: 1px; }
 
-.button_sm {
+.m-button--sm {
   font-size: .9em;
   padding: .3em .8em; }
 

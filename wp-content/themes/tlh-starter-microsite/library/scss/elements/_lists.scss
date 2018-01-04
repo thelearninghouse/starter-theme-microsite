@@ -1,0 +1,19 @@
+ul {
+	list-style: square outside url('../images/bullet.svg');
+}
+
+ul.large {
+	@include mobilefirst($bp-med) {
+		font-size: em(21);
+
+		li {
+			margin-bottom: rem(10);
+		}
+	}
+}
+
+ul.columns {
+	@include mobilefirst($bp-med) {
+			columns: 2;
+	}
+}

@@ -1,0 +1,54 @@
+.page-title {
+	background-color: $gray-dark;
+	background-size: cover;
+	background-position: center center;
+	color: white;
+	padding-top: rem(40);
+	padding-bottom: rem(40);
+
+	@include mobilefirst($bp-med) {
+		padding-top: rem(140);
+		padding-bottom: rem(80);
+	}
+}
+
+// Set up default responsive page header image
+@media screen and (min-width: 1200px) {
+	.page-title {
+		background-image: url('../images/section-background.jpg');
+	}
+}
+@media screen and (min-width: 801px) and (max-width: 1200px) {
+	.page-title {
+		background-image: url('../images/section-background.jpg');
+	}
+}
+@media screen and (max-width: 800px) {
+	.page-title {
+		background-image: url('../images/section-background.jpg');
+	}
+}
+
+.page-title h1,
+.page-title span, {
+	display: block;
+	max-width: $wrap-md;
+	margin-right: auto;
+}
+
+.page-title h1 {
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.page-title span {
+	font-weight: 300;
+}
+
+.page-title hr {
+	width: rem(80);
+	margin: rem(10) auto rem(10) 0;
+	border: none;
+	border-top: $accent-color-1 rem(4) solid;
+}

@@ -1,0 +1,11 @@
+// Clearfix
+.u-clearfix, .u-cf, .u-comment-respond {
+  zoom: 1;
+}
+.u-clearfix:before, .u-clearfix:after, .u-cf:before, .u-comment-respond:before, .u-cf:after, .u-comment-respond:after {
+  content: "";
+  display: table;
+}
+.u-clearfix:after, .u-cf:after, .u-comment-respond:after {
+    clear: both;
+}
