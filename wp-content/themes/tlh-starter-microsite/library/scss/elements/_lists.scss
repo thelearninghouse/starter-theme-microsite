@@ -1,3 +1,11 @@
+ol {
+
+}
+
+dl {
+
+}
+
 ul {
 	list-style: square outside url('../images/bullet.svg');
 }
@@ -15,5 +23,11 @@ ul.large {
 ul.columns {
 	@include mobilefirst($bp-med) {
 			columns: 2;
+	}
+}
+
+ul.columns--3 {
+	@include mobilefirst($bp-med) {
+			columns: 3;
 	}
 }
