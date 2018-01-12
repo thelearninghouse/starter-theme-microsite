@@ -1,7 +1,7 @@
 <?php
 
-function tlh_icon ( $name, $class = NULL ) {
-  echo '<i class="icon' . ($class ? ' ' . $class : '') . '">';
+function tlh_icon ( $name, $class = NULL, $title = NULL ) {
+  echo '<i class="icon' . ($class ? ' ' . $class : '') . '"' . ($title ? ' title="' . $title . '"': '') . '>';
   include(get_stylesheet_directory() . '/library/images/icons/' . $name . '.svg');
   echo '</i>';
 }

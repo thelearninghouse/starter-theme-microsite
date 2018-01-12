@@ -9,11 +9,7 @@
 						<div class="wrap-lg">
 							<?php get_template_part( 'template-parts/page_content' ); ?>
 							<div class="sidebar">
-								<div class="card">
-									<img class="illustration" src="<?php echo get_template_directory_uri(); ?>/library/images/online-degrees.svg" width="142" height="75">
-									<h2 class="title h3">Get Started Now</h2>
-									<div class="request-info-form"><?php the_field('form'); ?></div>
-								</div>
+								<?php get_template_part( 'template-parts/get_started_form' ); ?>
 							</div>
 						</div>
 					</section>

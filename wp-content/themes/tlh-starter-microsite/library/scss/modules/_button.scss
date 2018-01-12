@@ -7,28 +7,31 @@ Button Styles
 ///     @include buton($color);
 /// @param {variable} $btn-color [$link-color] - Background Button Color
 
-@mixin button($btn-color: $primary-color) {
+@mixin button() {
   display: inline-block;
   position: relative;
-  font-family: $sans-serif;
+  font-family: $sans-serif-condensed;
   text-decoration: none;
-  color: $off-black !important;
-  font-size: 1em;
+  color: white !important;
+  font-size: rem(17);
   line-height: 34px;
   font-weight: normal;
-  padding: .5em 1em;
-  border-radius: 2px;
+  letter-spacing: rem($text-condensed-spacing);
+  padding: rem(13) rem(15);
   border: 0;
   cursor: pointer;
-  transition: background-color 0.14s ease-in-out;
-  background: $accent-color-1;
+  transition: background-color 0.14s ease-in-out, box-shadow 0.14s ease-in-out;
+  background: $primary-color;
+  box-shadow: 0 2px 10px 0 rgba(0,0,0,0.40);
+  text-transform: uppercase;
 
   // hovering on the btn
   &:hover, &:focus {
     color: white;
     text-decoration: none;
     outline: none;
-    background: $accent-color-1-dark;
+    background: $primary-color-dark;
+    box-shadow: 0 2px 16px 0 rgba(0,0,0,0.1);
   } // end hover
 
   // clicking on the button
@@ -40,11 +43,28 @@ Button Styles
 
 // Regular Button
 .button {
-  @include button($accent-color-1);
+  @include button();
 }
 
 // Small Button
 .button--sm {
-	font-size: .9em;
-	padding: .3em .8em;
+	font-size: rem(15);
+	padding: rem(4) rem(10);
+}
+
+.button--accent-1 {
+  background-color: $accent-color-1;
+
+  &:hover, &:focus {
+    background-color: $accent-color-1-dark;
+  }
+}
+
+.button--white {
+  background-color: #fff;
+  color: $gray-dark !important;
+
+  &:hover, &:focus {
+    background-color: $gray-light;
+  }
 }
