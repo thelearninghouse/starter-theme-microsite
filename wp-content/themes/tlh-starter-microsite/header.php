@@ -85,6 +85,13 @@
 	    					         'theme_location' => 'main-nav',                 // where it's located in the theme
 	        			         'depth' => 0			                               // limit the depth of the nav
 							)); ?>
+							<?php global $post;
+    						$post_slug = $post->post_name;
+								$post_type = $post->post_type;
+								if ( $post_slug == 'online-degrees' || $post_slug == 'campus-degrees' || $post_type == 'landing-pages' ) {
+									echo '<a class="button button--white button--sm" href="#get-started">Get Started</a>';
+								}
+							?>
 						</nav>
 
 					</div>

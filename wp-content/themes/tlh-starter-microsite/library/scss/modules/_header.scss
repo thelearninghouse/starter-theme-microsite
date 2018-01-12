@@ -32,6 +32,15 @@ HEADER STYLES
 		margin-top: 0;
 	}
 
+	.button {
+		margin-top: rem(10);
+		text-align: center;
+
+		@include mobilefirst($bp-med) {
+			display: none;
+		}
+	}
+
 	ul {
 		list-style: none;
 		margin: 0;
@@ -64,11 +73,32 @@ HEADER STYLES
 	}
 }
 
+.header > .wrap-lg {
+	padding-left: rem(10);
+	padding-right: rem(10);
 
-@include mobilefirst($bp-med) {
-	.header > .wrap-lg {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-		}
+	@include mobilefirst($bp-med) {
+		padding-left: rem(20);
+		padding-right: rem(20);
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+}
+
+.landing-pages-template-default .header .phone {
+	text-align: center;
+	font-size: rem(20);
+	font-weight: 700;
+	margin-top: rem(10);
+
+	@include mobilefirst($bp-med) {
+		margin-top: 0;
+		font-size: rem(24);
+	}
+
+	a, a:hover, a:focus {
+		color: inherit;
+		text-decoration: none;
+	}
 }
