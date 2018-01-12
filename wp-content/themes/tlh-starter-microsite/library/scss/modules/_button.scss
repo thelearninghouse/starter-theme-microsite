@@ -10,13 +10,12 @@ Button Styles
 @mixin button() {
   display: inline-block;
   position: relative;
-  font-family: $sans-serif-condensed;
+  font-family: $sans-serif;
   text-decoration: none;
   color: white !important;
   font-size: rem(17);
   line-height: 34px;
   font-weight: normal;
-  letter-spacing: rem($text-condensed-spacing);
   padding: rem(13) rem(15);
   border: 0;
   cursor: pointer;
