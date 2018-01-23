@@ -12,16 +12,12 @@
   position: relative;
   height: 1em;
   width: 1em;
+  top: rem(3);
 }
 
 .icon.inline > svg {
 	height: 1em;
   width: 1em;
-}
-
-.icon.inline > svg {
-	bottom: -0.05em;
-	position: absolute;
 }
 
 .icon.inline.lg,

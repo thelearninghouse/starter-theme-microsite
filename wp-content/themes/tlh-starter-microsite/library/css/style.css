@@ -591,27 +591,40 @@ Button Styles
   position: relative;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-decoration: none;
-  color: #36424A !important;
-  font-size: 1em;
+  color: white !important;
+  font-size: 1.0625rem;
   line-height: 34px;
   font-weight: normal;
-  padding: .5em 1em;
-  border-radius: 2px;
+  padding: 0.8125rem 0.9375rem;
   border: 0;
   cursor: pointer;
-  transition: background-color 0.14s ease-in-out;
-  background: #F0B310; }
+  transition: background-color 0.14s ease-in-out, box-shadow 0.14s ease-in-out;
+  background: #990000;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.4);
+  text-transform: uppercase; }
   .button:hover, .button:focus {
     color: white;
     text-decoration: none;
     outline: none;
-    background: #C08F0C; }
+    background: maroon;
+    box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.1); }
   .button:active {
     top: 1px; }
 
 .button--sm {
-  font-size: .9em;
-  padding: .3em .8em; }
+  font-size: 0.9375rem;
+  padding: 0.25rem 0.625rem; }
+
+.button--accent-1 {
+  background-color: #F0B310; }
+  .button--accent-1:hover, .button--accent-1:focus {
+    background-color: #C08F0C; }
+
+.button--white {
+  background-color: #fff;
+  color: #505050 !important; }
+  .button--white:hover, .button--white:focus {
+    background-color: #DFDFDF; }
 
 .card {
   background: #FFFFFF;
@@ -892,22 +905,24 @@ textarea {
   position: relative;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-decoration: none;
-  color: #36424A !important;
-  font-size: 1em;
+  color: white !important;
+  font-size: 1.0625rem;
   line-height: 34px;
   font-weight: normal;
-  padding: .5em 1em;
-  border-radius: 2px;
+  padding: 0.8125rem 0.9375rem;
   border: 0;
   cursor: pointer;
-  transition: background-color 0.14s ease-in-out;
-  background: #F0B310;
+  transition: background-color 0.14s ease-in-out, box-shadow 0.14s ease-in-out;
+  background: #990000;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.4);
+  text-transform: uppercase;
   width: 100%; }
   .requestinfo input[type="submit"]:hover, .requestinfo input[type="submit"]:focus {
     color: white;
     text-decoration: none;
     outline: none;
-    background: #C08F0C; }
+    background: maroon;
+    box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.1); }
   .requestinfo input[type="submit"]:active {
     top: 1px; }
 
@@ -963,6 +978,12 @@ HEADER STYLES
   @media screen and (min-width: 768px) {
     .header__nav {
       margin-top: 0; } }
+  .header__nav .button {
+    margin-top: 0.625rem;
+    text-align: center; }
+    @media screen and (min-width: 768px) {
+      .header__nav .button {
+        display: none; } }
   .header__nav ul {
     list-style: none;
     margin: 0;
@@ -988,17 +1009,35 @@ HEADER STYLES
       background-color: rgba(0, 0, 0, 0.4);
       color: inherit; }
 
-@media screen and (min-width: 768px) {
-  .header > .wrap-lg {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center; } }
+.header > .wrap-lg {
+  padding-left: 0.625rem;
+  padding-right: 0.625rem; }
+  @media screen and (min-width: 768px) {
+    .header > .wrap-lg {
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; } }
+
+.landing-pages-template-default .header .phone {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-top: 0.625rem; }
+  @media screen and (min-width: 768px) {
+    .landing-pages-template-default .header .phone {
+      margin-top: 0;
+      font-size: 1.5rem; } }
+  .landing-pages-template-default .header .phone a, .landing-pages-template-default .header .phone a:hover, .landing-pages-template-default .header .phone a:focus {
+    color: inherit;
+    text-decoration: none; }
 
 .icon {
   display: -webkit-box;
@@ -1023,15 +1062,12 @@ HEADER STYLES
       align-self: center;
   position: relative;
   height: 1em;
-  width: 1em; }
+  width: 1em;
+  top: 0.1875rem; }
 
 .icon.inline > svg {
   height: 1em;
   width: 1em; }
-
-.icon.inline > svg {
-  bottom: -0.05em;
-  position: absolute; }
 
 .icon.inline.lg,
 .icon.inline.lg > svg {
